@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "/user";
+
+service User {
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+    rpc GetUserPassword(GetUserPasswordRequest) returns (GetUserPasswordResponse) {}
+}
+
+message CreateUserRequest {
+    string email = 1;
+    string password = 2;
+    string nickname = 3;
+    string phone_number = 4;
+}
+
+message CreateUserResponse {
+    enum Status {
+        SUCCESS = 0;
+        USER_ALREADY_EXISTS = 1;
+        INTERNAL_ERROR = 2;
+        // Другие возможные статусы
+    }
+
+    Status status = 1;
+    string message = 2;
+}
+
+message GetUserPasswordRequest {
+    string email = 1;
+}
+
+message GetUserPasswordResponse {
+    string id = 1;
+    string password = 2;
+}
