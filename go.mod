@@ -1,4 +1,4 @@
-module grpc-api
+module github.com/MicroservicesPractice/grpc-api
 
 go 1.21.3
 
