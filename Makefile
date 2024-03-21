@@ -4,8 +4,8 @@ help: # Show help for each of the Makefile recipes.
 
 .PHONY: protoGen
 protoGen: # Generating client and server code (.pb which contains all the protocol buffer code to populate, serialize, and retrieve request and response message types; _grpc.pb An interface type for clients and servers)
-	protoc --go_out=./generated/go \
-    --go-grpc_out=./generated/go \
+	protoc --go_out=./generated \
+    --go-grpc_out=./generated \
     ./user/user.proto
 
 
