@@ -1,4 +1,4 @@
-module github.com/MicroservicesPractice/grpc-api/tree/master/generated/go
+module github.com/MicroservicesPractice/grpc-api
 
 go 1.21.3
 
